@@ -1,0 +1,158 @@
+<!doctype html>
+
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>Racing Strats</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+
+  <body>
+    <div class="stats-bar mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <h1 class="mb-0 mt-0">11</h1>
+            <span class="small">Laps</span>
+          </div>
+          <div class="col-3">
+            <h1 class="mb-0 mt-0">32.6</h1>
+            <span class="small">Litres</span>
+          </div>
+          <div class="col-3">
+            <h1 class="mb-0 mt-0">0</h1>
+            <span class="small">Pitstops</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 150px;">
+      <div class="row">
+        <div class="col-sm-8">
+          <form>
+            <div class="section">
+              <h5>Lap Calculator</h4>
+              <div class="form-group row">
+                <label class="col-form-label col-sm-6">Total Race Time</label>
+                <div class="col-sm-3 col-6">
+                  <div class="input-group">
+                    <input type="number" name="race-time-hour" placeholder="00" class="form-control">
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="race-time-hour">hh</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3 col-6">
+                  <div class="input-group">
+                    <input type="number" name="race-time-minute" placeholder="00" class="form-control">
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="race-time-minute">mm</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-form-label col-sm-6">Laptimes</label>
+                <div class="col-sm-3 col-6">
+                  <div class="input-group">
+                    <input type="number" name="lap-time-minute" placeholder="00" class="form-control">
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="lap-time-minute">mm</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3 col-6">
+                  <div class="input-group">
+                    <input type="number" name="lap-time-second" placeholder="00" class="form-control">
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="lap-time-second">ss</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row mb-0">
+                <label for="total-laps" class="col-form-label col-sm-6">Total Laps</label>
+                <div class="col-6">
+                  <input type="number" id="total-laps" name="total-laps" placeholder="0" class="form-control">
+                </div>
+              </div>
+            </div>
+          
+            <div class="section">
+              <h5>Fuel Calculator</h4>
+              <div class="form-group row">
+                <label class="col-form-label col-sm-6">Fuel Per Lap</label>
+                <div class="col-sm-6 col-12">
+                  <div class="input-group">
+                    <input type="number" name="fuel-per-lap" placeholder="00" class="form-control">
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="fuel-per-lap">litres</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-form-label col-sm-6">Fuel Needed for X Laps</label>
+                <div class="col-sm-6 col-12">
+                  <div class="input-group">
+                    <input type="number" name="total-fuel-needed" placeholder="00" class="form-control">
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="total-fuel-needed">litres</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row mb-0">
+                <label class="col-form-label col-sm-6">Fuel Tank Capacity</label>
+                <div class="col-sm-6 col-12">
+                  <div class="input-group">
+                    <input type="number" name="tank-capacity" placeholder="00" class="form-control">
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="tank-capacity">litres</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <h1 class="mt-0 mb-0">Racing Strats</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-5">
+      <div class="container">
+        <p class="mb-0">Built by Tony Beninate</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

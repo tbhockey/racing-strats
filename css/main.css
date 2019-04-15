@@ -1,0 +1,51 @@
+/* COLOR LEGEND */
+/* Blue:        #202C5E */
+/* Dark Blue:   #121834 */
+/* Darker Blue: #0B0F20 */
+/* Light Blue:  #C2CDFF */
+
+
+body {
+  background-color: #121834;
+  color: #C2CDFF;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.stats-bar {
+  background-color: #202C5E;
+  padding: 30px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 11;
+  opacity: 0.9;
+  top: 0;
+}
+
+.stats-bar span {
+  color: white;
+  text-transform: uppercase;
+}
+
+.section {
+  border-left: 10px solid;
+  border-bottom: 1px solid;
+  padding: 10px 0 10px 10px;
+  border-color: #202C5E;
+  margin-bottom: 20px;
+}
+
+.section h5 {
+  text-transform: uppercase;
+}
+
+/*.form-control {
+  background-color: #121834;
+  border-color: #202C5E;
+}*/
+
+footer {
+  background-color: #0B0F20;
+  padding: 30px 0;
+  color: #202C5E;
+  font-size: 12px;
+}
