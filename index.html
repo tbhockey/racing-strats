@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="icon.png">
-    <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
@@ -16,10 +15,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
     <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="js/vendor/jquery-3.3.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
   </head>
@@ -54,17 +53,17 @@
                 <label class="col-form-label col-sm-6">Total Race Time</label>
                 <div class="col-sm-3 col-6">
                   <div class="input-group">
-                    <input type="number" name="race-time-hour" placeholder="00" class="form-control">
+                    <input type="number" name="race-time-hour" id='race-time-hour' placeholder="00" class="form-control">
                     <div class="input-group-append">
-                      <span class="input-group-text" id="race-time-hour">hh</span>
+                      <span class="input-group-text">hh</span>
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-3 col-6">
                   <div class="input-group">
-                    <input type="number" name="race-time-minute" placeholder="00" class="form-control">
+                    <input type="number" name="race-time-minute" id="race-time-minute" placeholder="00" class="form-control">
                     <div class="input-group-append">
-                      <span class="input-group-text" id="race-time-minute">mm</span>
+                      <span class="input-group-text">mm</span>
                     </div>
                   </div>
                 </div>
@@ -74,17 +73,17 @@
                 <label class="col-form-label col-sm-6">Laptimes</label>
                 <div class="col-sm-3 col-6">
                   <div class="input-group">
-                    <input type="number" name="lap-time-minute" placeholder="00" class="form-control">
+                    <input type="number" name="lap-time-minute" id="lap-time-minute" placeholder="00" class="form-control">
                     <div class="input-group-append">
-                      <span class="input-group-text" id="lap-time-minute">mm</span>
+                      <span class="input-group-text">mm</span>
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-3 col-6">
                   <div class="input-group">
-                    <input type="number" name="lap-time-second" placeholder="00" class="form-control">
+                    <input type="number" name="lap-time-second" id="lap-time-second" placeholder="00" class="form-control">
                     <div class="input-group-append">
-                      <span class="input-group-text" id="lap-time-second">ss</span>
+                      <span class="input-group-text">ss</span>
                     </div>
                   </div>
                 </div>
