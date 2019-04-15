@@ -7,9 +7,10 @@ function calculateLaps() {
 
   var raceTimeSeconds = timeToSeconds($raceTimeHour, $raceTimeMin, 0);
   var lapTimeSeconds  = timeToSeconds(0, $lapTimeMin, $lapTimeSecond);
-  var laps            = Math.ceil(raceTimeSeconds / lapTimeSeconds);
+  var laps            = Math.ceil(raceTimeSeconds / lapTimeSeconds) || 0;
 
   $('#total-laps').val(laps);
+  $('.lap-count').text(laps);
 };
 
 function timeToSeconds(hours, minutes, seconds) {
