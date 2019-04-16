@@ -1,2 +1,2 @@
 # racing-strats
-Calculator for various racing strategies
+A basic racing strategy generator
