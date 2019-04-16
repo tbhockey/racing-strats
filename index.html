@@ -10,7 +10,6 @@
     <link rel="apple-touch-icon" href="icon.png">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     
@@ -19,7 +18,6 @@
 
     <script src="js/vendor/modernizr-3.7.1.min.js"></script>
     <script src="js/vendor/jquery-3.3.1.min.js"></script>
-    <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
   </head>
 
@@ -28,7 +26,7 @@
       <div class="container">
         <div class="row">
           <div class="col-3">
-            <h1 class="mb-0 mt-0 lap-count">11</h1>
+            <h1 class="mb-0 mt-0 lap-count">0</h1>
             <span class="small">Laps</span>
           </div>
           <div class="col-3">
@@ -36,7 +34,7 @@
             <span class="small">Litres</span>
           </div>
           <div class="col-3">
-            <h1 class="mb-0 mt-0">0</h1>
+            <h1 class="mb-0 mt-0 pit-count">0</h1>
             <span class="small">Pitstops</span>
           </div>
         </div>
@@ -53,7 +51,7 @@
                 <label class="col-form-label col-sm-6">Total Race Time</label>
                 <div class="col-sm-3 col-6">
                   <div class="input-group">
-                    <input type="number" name="race-time-hour" id='race-time-hour' placeholder="00" class="form-control">
+                    <input type="number" min=0 name="race-time-hour" id='race-time-hour' placeholder="00" class="form-control">
                     <div class="input-group-append">
                       <span class="input-group-text">hh</span>
                     </div>
@@ -61,7 +59,7 @@
                 </div>
                 <div class="col-sm-3 col-6">
                   <div class="input-group">
-                    <input type="number" name="race-time-minute" id="race-time-minute" placeholder="00" class="form-control">
+                    <input type="number" min=0 name="race-time-minute" id="race-time-minute" placeholder="00" class="form-control">
                     <div class="input-group-append">
                       <span class="input-group-text">mm</span>
                     </div>
@@ -70,10 +68,10 @@
               </div>
 
               <div class="form-group row">
-                <label class="col-form-label col-sm-6">Laptimes</label>
+                <label class="col-form-label col-sm-6">Average Laptimes</label>
                 <div class="col-sm-3 col-6">
                   <div class="input-group">
-                    <input type="number" name="lap-time-minute" id="lap-time-minute" placeholder="00" class="form-control">
+                    <input type="number" min=0 name="lap-time-minute" id="lap-time-minute" placeholder="00" class="form-control">
                     <div class="input-group-append">
                       <span class="input-group-text">mm</span>
                     </div>
@@ -81,7 +79,7 @@
                 </div>
                 <div class="col-sm-3 col-6">
                   <div class="input-group">
-                    <input type="number" name="lap-time-second" id="lap-time-second" placeholder="00" class="form-control">
+                    <input type="number" min=0 name="lap-time-second" id="lap-time-second" placeholder="00" class="form-control">
                     <div class="input-group-append">
                       <span class="input-group-text">ss</span>
                     </div>
@@ -92,7 +90,7 @@
               <div class="form-group row mb-0">
                 <label for="total-laps" class="col-form-label col-sm-6">Total Laps</label>
                 <div class="col-6">
-                  <input type="number" id="total-laps" name="total-laps" placeholder="0" class="form-control">
+                  <input type="number" min=0 id="total-laps" name="total-laps" placeholder="0" class="form-control">
                 </div>
               </div>
             </div>
@@ -103,21 +101,23 @@
                 <label class="col-form-label col-sm-6">Fuel Per Lap</label>
                 <div class="col-sm-6 col-12">
                   <div class="input-group">
-                    <input type="number" name="fuel-per-lap" placeholder="00" class="form-control">
+                    <input type="number" min=0 name="fuel-per-lap" id="fuel-per-lap" placeholder="0" class="form-control">
                     <div class="input-group-append">
-                      <span class="input-group-text" id="fuel-per-lap">litres</span>
+                      <span class="input-group-text">litres</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="col-form-label col-sm-6">Fuel Needed for X Laps</label>
+                <label class="col-form-label col-sm-6">
+                  Total Fuel Needed for <strong class="lap-count">0</strong> Laps
+                </label>
                 <div class="col-sm-6 col-12">
                   <div class="input-group">
-                    <input type="number" name="total-fuel-needed" placeholder="00" class="form-control">
+                    <input type="number" min=0 name="total-fuel-needed" id="total-fuel-needed" placeholder="0" class="form-control">
                     <div class="input-group-append">
-                      <span class="input-group-text" id="total-fuel-needed">litres</span>
+                      <span class="input-group-text">litres</span>
                     </div>
                   </div>
                 </div>
@@ -127,9 +127,9 @@
                 <label class="col-form-label col-sm-6">Fuel Tank Capacity</label>
                 <div class="col-sm-6 col-12">
                   <div class="input-group">
-                    <input type="number" name="tank-capacity" placeholder="00" class="form-control">
+                    <input type="number" min=0 name="tank-capacity" id="tank-capacity" placeholder="0" class="form-control">
                     <div class="input-group-append">
-                      <span class="input-group-text" id="tank-capacity">litres</span>
+                      <span class="input-group-text">litres</span>
                     </div>
                   </div>
                 </div>

@@ -1,12 +1,24 @@
-function calculateLaps() {
-  var $raceTimeHour  = $('#race-time-hour').val();
-  var $raceTimeMin   = $('#race-time-minute').val();
-  var $lapTimeMin    = $('#lap-time-minute').val();
-  var $lapTimeSecond = $('#lap-time-second').val();
-  var $totalLaps     = $('#total-laps').val();
+function calculateFuel() {
+  var fuelPerLap      = $('#fuel-per-lap').val();
+  var totalLaps       = $('#total-laps').val();
+  var tankCapacity    = $('#tank-capacity').val();
 
-  var raceTimeSeconds = timeToSeconds($raceTimeHour, $raceTimeMin, 0);
-  var lapTimeSeconds  = timeToSeconds(0, $lapTimeMin, $lapTimeSecond);
+  var totalFuelNeeded = parseInt(fuelPerLap) * parseInt(totalLaps);
+  var pitsNeeded = Math.floor(parseInt(totalFuelNeeded) / parseInt(tankCapacity));
+
+  $('#total-fuel-needed').val(totalFuelNeeded);
+  $('.pit-count').val(pitsNeeded);
+};
+
+function calculateLaps() {
+  var raceTimeHour  = $('#race-time-hour').val();
+  var raceTimeMin   = $('#race-time-minute').val();
+  var lapTimeMin    = $('#lap-time-minute').val();
+  var lapTimeSecond = $('#lap-time-second').val();
+  var totalLaps     = $('#total-laps').val();
+
+  var raceTimeSeconds = timeToSeconds(raceTimeHour, raceTimeMin, 0);
+  var lapTimeSeconds  = timeToSeconds(0, lapTimeMin, lapTimeSecond);
   var laps            = Math.ceil(raceTimeSeconds / lapTimeSeconds) || 0;
 
   $('#total-laps').val(laps);
@@ -24,9 +36,11 @@ function timeToSeconds(hours, minutes, seconds) {
 $(document).ready(function() {
 
   calculateLaps();
+  calculateFuel();
 
   $('input').change(function() {
     calculateLaps();
+    calculateFuel();
   });
 
 });
