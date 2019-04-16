@@ -11,9 +11,13 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+hr {
+  border-color: #202C5E;
+}
+
 .stats-bar {
   background-color: #202C5E;
-  padding: 30px 0 28px 0;
+  padding: 30px 0 25px 0;
   position: fixed;
   width: 100%;
   z-index: 11;
@@ -42,11 +46,6 @@ body {
 .section h5 {
   text-transform: uppercase;
 }
-
-/*.form-control {
-  background-color: #121834;
-  border-color: #202C5E;
-}*/
 
 footer {
   background-color: #0B0F20;
