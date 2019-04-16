@@ -3,11 +3,14 @@ function calculateFuel() {
   var totalLaps       = $('#total-laps').val();
   var tankCapacity    = $('#tank-capacity').val();
 
-  var totalFuelNeeded = parseInt(fuelPerLap) * parseInt(totalLaps);
-  var pitsNeeded = Math.floor(parseInt(totalFuelNeeded) / parseInt(tankCapacity));
+  var totalFuelNeeded = (parseInt(fuelPerLap) * parseInt(totalLaps)) || 0;
+  var pitsNeeded = Math.floor(parseInt(totalFuelNeeded) / parseInt(tankCapacity)) || 0;
+  var finalFuelNeeded = totalFuelNeeded - (tankCapacity * pitsNeeded);
 
   $('#total-fuel-needed').val(totalFuelNeeded);
-  $('.pit-count').val(pitsNeeded);
+  $('.total-litres').text(totalFuelNeeded);
+  $('.final-litres').text(finalFuelNeeded);
+  $('.pit-count').text(pitsNeeded);
 };
 
 function calculateLaps() {

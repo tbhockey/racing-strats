@@ -33,8 +33,9 @@ body {
 .section {
   border-left: 10px solid;
   border-bottom: 1px solid;
-  padding: 10px 0 10px 10px;
+  padding: 10px 10px 10px 10px;
   border-color: #202C5E;
+  background-color: rgba(32, 44, 94, 0.15);
   margin-bottom: 20px;
 }
 
