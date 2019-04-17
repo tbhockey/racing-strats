@@ -4,7 +4,7 @@ function calculateFuel() {
   var tankCapacity    = $('#tank-capacity').val();
 
   var totalFuelNeeded = (parseInt(fuelPerLap) * parseInt(totalLaps)) || 0;
-  var pitsNeeded = Math.floor(parseInt(totalFuelNeeded) / parseInt(tankCapacity)) || 0;
+  var pitsNeeded      = Math.floor(parseInt(totalFuelNeeded) / parseInt(tankCapacity)) || 0;
   var finalFuelNeeded = totalFuelNeeded - (tankCapacity * pitsNeeded);
 
   $('#total-fuel-needed').val(totalFuelNeeded);
@@ -18,14 +18,20 @@ function calculateLaps() {
   var raceTimeMin   = $('#race-time-minute').val();
   var lapTimeMin    = $('#lap-time-minute').val();
   var lapTimeSecond = $('#lap-time-second').val();
-  var totalLaps     = $('#total-laps').val();
+  var totalLaps     = $('#total-laps').val() || 0;
 
   var raceTimeSeconds = timeToSeconds(raceTimeHour, raceTimeMin, 0);
   var lapTimeSeconds  = timeToSeconds(0, lapTimeMin, lapTimeSecond);
-  var laps            = Math.ceil(raceTimeSeconds / lapTimeSeconds) || 0;
+  var calculatedLaps  = Math.ceil(raceTimeSeconds / lapTimeSeconds) || 0;
 
-  $('#total-laps').val(laps);
-  $('.lap-count').text(laps);
+  if(raceTimeSeconds > 0) {
+    // Use calculated lap value.
+    $('#total-laps').val(calculatedLaps);
+    $('.lap-count').text(calculatedLaps);
+  } else {
+    // Use direct lap value.
+    $('.lap-count').text(totalLaps);
+  };
 };
 
 function timeToSeconds(hours, minutes, seconds) {
@@ -47,3 +53,4 @@ $(document).ready(function() {
   });
 
 });
+ng
