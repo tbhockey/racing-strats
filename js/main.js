@@ -3,7 +3,7 @@ function calculateFuel() {
   var totalLaps       = $('#total-laps').val();
   var tankCapacity    = $('#tank-capacity').val();
 
-  var totalFuelNeeded = (parseInt(fuelPerLap) * parseInt(totalLaps)) || 0;
+  var totalFuelNeeded = Math.ceil((parseFloat(fuelPerLap) * parseInt(totalLaps))) || 0;
   var pitsNeeded      = Math.floor(parseInt(totalFuelNeeded) / parseInt(tankCapacity)) || 0;
   var finalFuelNeeded = totalFuelNeeded - (tankCapacity * pitsNeeded);
 
@@ -37,7 +37,7 @@ function calculateLaps() {
 function timeToSeconds(hours, minutes, seconds) {
   var hours   = (parseInt(hours) || 0) * 3600;
   var minutes = (parseInt(minutes) || 0) * 60;
-  var seconds = parseInt(seconds) || 0;
+  var seconds = parseFloat(seconds) || 0;
 
   return hours + minutes + seconds;
 };
