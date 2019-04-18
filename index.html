@@ -67,7 +67,6 @@
         <div class="col-sm-8">
           <form>
             <div class="section">
-              <!-- <h5>Lap Calculator</h4> -->
               <div class="form-group row">
                 <label class="col-form-label col-sm-6">Total Race Time</label>
                 <div class="col-sm-3 col-6">
@@ -108,35 +107,18 @@
                 </div>
               </div>
 
-              <div class="form-group row mb-0">
+              <div class="form-group row">
                 <label for="total-laps" class="col-form-label col-sm-6">Total Laps</label>
                 <div class="col-6">
                   <input type="number" min=0 id="total-laps" name="total-laps" placeholder="0" class="form-control">
                 </div>
               </div>
-            </div>
-          
-            <div class="section">
-              <!-- <h5>Fuel Calculator</h4> -->
+            
               <div class="form-group row">
                 <label class="col-form-label col-sm-6">Fuel Per Lap</label>
                 <div class="col-sm-6 col-12">
                   <div class="input-group">
                     <input type="number" min=0 name="fuel-per-lap" id="fuel-per-lap" placeholder="0" class="form-control">
-                    <div class="input-group-append">
-                      <span class="input-group-text">litres</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label class="col-form-label col-sm-6">
-                  Total Fuel Needed for <strong class="lap-count">0</strong> Laps
-                </label>
-                <div class="col-sm-6 col-12">
-                  <div class="input-group">
-                    <input type="number" min=0 name="total-fuel-needed" id="total-fuel-needed" disabled="disabled" placeholder="0" class="form-control">
                     <div class="input-group-append">
                       <span class="input-group-text">litres</span>
                     </div>
@@ -155,8 +137,30 @@
                   </div>
                 </div>
               </div>
-            </form>
-          </div>
+            </div>
+
+            <div class="section">
+              <h5>Summary</h5>
+              <table style="width: 100%">
+                <tr>
+                  <td width="50%">Total Laps</td>
+                  <td width="50%" class="text-right"><code class="lap-count">0</code></td>
+                </tr>
+                <tr>
+                  <td>Total Fuel Needed</td>
+                  <td class="text-right"><code class="total-litres">0</code></td>
+                </tr>
+                <tr>
+                  <td>Fuel Needed For Final Stint</td>
+                  <td class="text-right"><code class="final-litres">0</code></td>
+                </tr>
+                <tr>
+                  <td>Pitstops</td>
+                  <td class="text-right"><code class="pit-count">0</code></td>
+                </tr>
+              </table>
+            </div>
+          </form>
         </div>
 
         <div class="col-sm-4">

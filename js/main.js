@@ -7,7 +7,7 @@ function calculateFuel() {
   var pitsNeeded      = Math.floor(parseInt(totalFuelNeeded) / parseInt(tankCapacity)) || 0;
   var finalFuelNeeded = totalFuelNeeded - (tankCapacity * pitsNeeded);
 
-  $('#total-fuel-needed').val(totalFuelNeeded);
+  $('.total-fuel-needed').text(totalFuelNeeded);
   $('.total-litres').text(totalFuelNeeded);
   $('.final-litres').text(finalFuelNeeded);
   $('.pit-count').text(pitsNeeded);
