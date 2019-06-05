@@ -54,3 +54,15 @@ footer {
   color: #202C5E;
   font-size: 12px;
 }
+
+input.form-control, input.form-control:focus {
+  background-color: #0B0F20;
+  border-color: #121834;
+  color: #C2CDFF;
+}
+
+.input-group-text {
+  background-color: #202C5E;
+  color: #C2CDFF;
+  border: none;
+}
